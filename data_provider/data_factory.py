@@ -7,7 +7,7 @@ data_dict = {
     'ETTm1': Dataset_ETT_minute,
     'ETTm2': Dataset_ETT_minute,
     'custom': Dataset_Custom,
-    'dataset2': Dataset_Custom,
+    'dataset': Dataset_Custom,
     'sin':Dataset_sin,
 }
 

@@ -3,7 +3,7 @@ export CUDA_VISIBLE_DEVICES=1
 python -u run.py \
   --is_training 1 \
   --root_path ./dataset/ETT-small/ \
-  --data_path dataset2.csv \
+  --data_path dataset.csv \
   --model_id FiLM_ETTm2_96_96 \
   --model FiLM \
   --data dataset \

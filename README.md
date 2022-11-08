@@ -18,6 +18,7 @@
 </br>
 
 ## Acknowledgments
-Dataset source : Diao, W., Saxena, S., Pecht, M. Accelerated Cycle Life Testing and Capacity Degradation Modeling of LiCoO2 -graphite Cells. J. Power Sources 2019, 435, 226830. https://web.calce.umd.edu/batteries/data.htm
-We appreciate the following github repos a lot for their valuable code base and datasets:
+Dataset source : Diao, W., Saxena, S., Pecht, M. Accelerated Cycle Life Testing and Capacity Degradation Modeling of LiCoO2 -graphite Cells. J. Power Sources 2019, 435, 226830. https://web.calce.umd.edu/batteries/data.htm </br>
+
+We appreciate the following github repository a lot for their valuable code base and datasets:
 https://github.com/tianzhou2011/FiLM

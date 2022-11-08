@@ -5,11 +5,11 @@ python -u run.py \
   --root_path ./dataset/ETT-small/ \
   --data_path dataset2.csv \
   --model_id FiLM_ETTm2_96_96 \
-  --model Informer \
-  --data dataset2 \
+  --model FiLM \
+  --data dataset \
   --features S \
-  --seq_len 720 \
-  --label_len 0 \
+  --seq_len 96 \
+  --label_len 48 \
   --pred_len 96 \
   --e_layers 2 \
   --d_layers 1 \

@@ -4,7 +4,7 @@ from data_provider.data_factory import data_provider
 from data_provider.data_loader import  Dataset_Custom
 from exp.exp_basic import Exp_Basic
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from models import Informer, Autoformer, Transformer, Logformer,FiLM,LSTM
+from models import FiLM
 #from models.pyraformer import Pyraformer_LR
 # from models.reformer_pytorch.reformer_pytorch import Reformer
 from utils.tools import EarlyStopping, adjust_learning_rate, visual
@@ -34,9 +34,9 @@ class Exp_Main(Exp_Basic):
 
     def _build_model(self):
         model_dict = {
-            'Autoformer': Autoformer,
-            'Transformer': Transformer,
-            'Informer': Informer,
+            #'Autoformer': Autoformer,
+            #'Transformer': Transformer,
+            #'Informer': Informer,
             #'S4':S4_model,
             #'S4film':S4_FiLM,
             #'LSTM':LSTM,
@@ -44,7 +44,7 @@ class Exp_Main(Exp_Basic):
             #'Ficonv':Ficonv,
             #'Pyraformer':Pyraformer_LR,
             #'Reformer': Reformer,
-            'Logformer': Logformer,
+            #'Logformer': Logformer,
             #'Transformer_sin':Transformer_sin,
             #'Autoformer_sin':Autoformer_sin,
             #'TreeDRNet':TreeDRNet,

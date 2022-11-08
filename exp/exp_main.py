@@ -1,6 +1,7 @@
 import os
 import sys
 from data_provider.data_factory import data_provider
+from data_provider.data_loader import  Dataset_Custom
 from exp.exp_basic import Exp_Basic
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from models import Informer, Autoformer, Transformer, Logformer,FiLM,LSTM
@@ -62,6 +63,7 @@ class Exp_Main(Exp_Basic):
 
     def _get_data(self, flag):
         data_set, data_loader = data_provider(self.args, flag)
+        self.Data = data_set
         return data_set, data_loader
 
     def _select_optimizer(self):
@@ -274,7 +276,22 @@ class Exp_Main(Exp_Basic):
 
                 batch_y = batch_y[:, -self.args.pred_len:, f_dim:].to(self.device)
                 outputs = outputs.detach().cpu().numpy()
+                outputs = outputs.reshape(-1,outputs.shape[-2])#
+                
+                outputs = self.Data.inverse_transform(outputs)#
                 batch_y = batch_y.detach().cpu().numpy()
+                batch_y = batch_y.reshape(-1,batch_y.shape[-2])#
+                batch_y = self.Data.inverse_transform(batch_y)
+
+
+
+
+
+
+
+
+
+
 
                 pred = outputs  # outputs.detach().cpu().numpy()  # .squeeze()
                 true = batch_y  # batch_y.detach().cpu().numpy()  # .squeeze()
@@ -290,8 +307,10 @@ class Exp_Main(Exp_Basic):
         preds = np.array(preds)
         trues = np.array(trues)
         print('test shape:', preds.shape, trues.shape)
-        preds = preds.reshape(-1, preds.shape[-2], preds.shape[-1])
-        trues = trues.reshape(-1, trues.shape[-2], trues.shape[-1])
+        preds = preds.reshape(-1, preds.shape[-1], 1)
+        trues = trues.reshape(-1, trues.shape[-1], 1)
+        #preds = preds.reshape(-1, preds.shape[-2], preds.shape[-1])
+        #trues = trues.reshape(-1, trues.shape[-2], trues.shape[-1])
         print('test shape:', preds.shape, trues.shape)
 
         # result save

@@ -15,14 +15,14 @@ parser = argparse.ArgumentParser(description='Autoformer & Transformer family fo
 # basic config
 parser.add_argument('--is_training', type=int, default=1, help='status')
 parser.add_argument('--model_id', type=str, default='test', help='model id')
-parser.add_argument('--model', type=str, default='Reformer',
+parser.add_argument('--model', type=str, default='FiLM',
                     help='model name, options: [Autoformer, Informer, Transformer]')
 
 # data loader
 parser.add_argument('--data', type=str, default='ETTh1', help='dataset type')
-parser.add_argument('--root_path', type=str, default='./data/ETT/', help='root path of the data file')
+parser.add_argument('--root_path', type=str, default='./dataset/ETT-small/', help='root path of the data file')
 parser.add_argument('--data_path', type=str, default='ETTh1.csv', help='data file')
-parser.add_argument('--features', type=str, default='M',
+parser.add_argument('--features', type=str, default='S',
                     help='forecasting task, options:[M, S, MS]; M:multivariate predict multivariate, S:univariate predict univariate, MS:multivariate predict univariate')
 parser.add_argument('--target', type=str, default='Voltage(V)', help='target feature in S or MS task')
 parser.add_argument('--freq', type=str, default='h',
